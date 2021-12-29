@@ -1,0 +1,3 @@
+<%= if @contents do %>
+    <%= for content <- @contents, do: render_section(content) %>
+<% end %>

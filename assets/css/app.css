@@ -1,120 +1,102 @@
-/* This file is for your main application CSS */
-@import "./phoenix.css";
-
-/* Alerts and form errors used by phx.new */
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-.alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-.alert-warning {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
-}
-.alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-}
-.alert p {
-  margin-bottom: 0;
-}
-.alert:empty {
-  display: none;
-}
-.invalid-feedback {
-  color: #a94442;
-  display: block;
-  margin: -1rem 0 2rem;
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* LiveView specific classes for your customization */
-.phx-no-feedback.invalid-feedback,
-.phx-no-feedback .invalid-feedback {
-  display: none;
+.main .main__content {
+  flex: 1;
 }
 
-.phx-click-loading {
-  opacity: 0.5;
-  transition: opacity 1s ease-out;
+.container {
+  max-width: 1032px;
 }
 
-.phx-loading{
-  cursor: wait;
+.navbar {
+  min-height: 4rem;
 }
 
-.phx-modal {
-  opacity: 1!important;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+.navbar > .container {
+  min-height: 4rem;
 }
 
-.phx-modal-content {
-  background-color: #fefefe;
-  margin: 15vh auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.phx-modal-close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.phx-modal-close:hover,
-.phx-modal-close:focus {
-  color: black;
-  text-decoration: none;
+.article-list__article {
   cursor: pointer;
+  margin-bottom: 2rem;
 }
 
-.fade-in-scale {
-  animation: 0.2s ease-in 0s normal forwards 1 fade-in-scale-keys;
+.article__image {
+  margin-bottom: 1rem;
 }
 
-.fade-out-scale {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-out-scale-keys;
+.hero {
+  margin-bottom: 6rem;
+  text-align: center;
+  padding-bottom: 10rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.fade-in {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-in-keys;
-}
-.fade-out {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-out-keys;
-}
-
-@keyframes fade-in-scale-keys{
-  0% { scale: 0.95; opacity: 0; }
-  100% { scale: 1.0; opacity: 1; }
+.hero .hero-body .image {
+  width: 70%;
+  position: absolute;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.1);
+  top: 100%;
+  right: 50%;
+  transform: translate(50%, 100px);
 }
 
-@keyframes fade-out-scale-keys{
-  0% { scale: 1.0; opacity: 1; }
-  100% { scale: 0.95; opacity: 0; }
+.avatar {
+  background-color: #ededed;
 }
 
-@keyframes fade-in-keys{
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+.article .container {
+  max-width: 680px;
 }
 
-@keyframes fade-out-keys{
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+.article .article__header {
+  margin-bottom: 2rem;
 }
+
+.article .article__content {
+  font-size: 1.3rem;
+}
+
+.article p {
+  margin-bottom: 1rem;
+}
+
+.article .main-image {
+  margin: 2rem -6rem;
+}
+
+main .text-and-image {
+  margin-bottom: 8rem;
+}
+
+main .text-and-image .image-container {
+  text-align: right;
+}
+
+main .text-and-image:nth-child(odd) .columns {
+  flex-direction: row-reverse;
+}
+
+main .text-and-image .image {
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.1);
+  width: 75%;
+}
+
+.features {
+  text-align: center;
+}
+
+.features .feature {
+  margin-bottom: 2rem;
+}
+
+.features .feature .image {
+  width: 3rem;
+  margin: 0 auto 1rem auto;
+}
+
