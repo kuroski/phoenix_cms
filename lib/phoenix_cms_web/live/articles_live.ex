@@ -3,9 +3,18 @@ defmodule PhoenixCmsWeb.ArticlesLive do
 
   alias PhoenixCmsWeb.LiveEncoder
 
+  @topic "articles"
+
   @impl true
   def mount(_params, _session, socket) do
+    PhoenixCmsWeb.Endpoint.subscribe(@topic)
+
     {:ok, assign_socket(socket)}
+  end
+
+  @impl true
+  def handle_info(%{event: "update"}, socket) do
+    {:noreply, assign_socket(socket)}
   end
 
   def render_article(socket, %{id: _id, slug: _slug} = article) do

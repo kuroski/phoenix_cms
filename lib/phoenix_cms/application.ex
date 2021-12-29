@@ -8,6 +8,8 @@ defmodule PhoenixCms.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      PhoenixCms.Article.Cache,
+      PhoenixCms.Content.Cache,
       # Start the Telemetry supervisor
       PhoenixCmsWeb.Telemetry,
       # Start the PubSub system

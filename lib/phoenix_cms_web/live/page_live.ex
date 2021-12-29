@@ -3,9 +3,18 @@ defmodule PhoenixCmsWeb.PageLive do
 
   alias PhoenixCmsWeb.LiveEncoder
 
+  @topic "contents"
+
   @impl true
   def mount(_params, _session, socket) do
+    PhoenixCmsWeb.Endpoint.subscribe(@topic)
+
     {:ok, assign_socket(socket)}
+  end
+
+  @impl true
+  def handle_info(%{event: "update"}, socket) do
+    {:noreply, assign_socket(socket)}
   end
 
   def render_section(%{type: "hero"} = content) do
